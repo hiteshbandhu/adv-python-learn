@@ -16,3 +16,28 @@ class Vector:
 hitesh = Vector(2, 5)
 print(hitesh)  # representing using the __repr__ method
 hitesh()  # calling the vector using __call__
+
+
+### Comparison Magic Methods like eq,ge,le etc
+
+
+class Word:
+    def __init__(self, word: str) -> None:
+        word.strip()
+        self.word = word
+
+    def __gt__(self, other):
+        return len(self.word) > len(other.word)
+
+    def __lt__(self, other):
+        return len(self.word) < len(other.word)
+
+    def __ge__(self, other):
+        return len(self.word) >= len(other.word)
+
+    def __le__(self, other):
+        return len(self.word) <= len(other.word)
+
+
+str1 = Word("Hitesh")
+str2 = Word("Tanya")
